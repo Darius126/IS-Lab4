@@ -2,19 +2,19 @@ close all
 clear all
 clc
 %% raidşiø pavyzdşiø nuskaitymas ir poşymiø skaièiavimas
-pavadinimas = 'train_data.png';
+pavadinimas = 'duomenys.jpg';
 pozymiai_tinklo_mokymui = pozymiai_raidems_atpazinti(pavadinimas, 8);
 %% Atpaşintuvo kûrimas
 % poşymiai iğ celiø masyvo perkeliami á matricà
 P = cell2mat(pozymiai_tinklo_mokymui);
 % sukuriama teisingø atsakymø matrica: 11 raidşiø, 8 eilutës mokymui
-T = [eye(11), eye(11), eye(11), eye(11), eye(11), eye(11), eye(11), eye(11)];
+T = [eye(1), eye(1), eye(1), eye(1), eye(1), eye(1), eye(1), eye(1)];
 % sukuriamas SBF tinklas duotiems P ir T sàryğiams
 tinklas = newrb(P,T,0,1,13);
 
 %% Tinklo patikra
 % skaièiuojamas tinklo iğëjimas neşinomiems poşymiams
-P2 = P(:,12:22);
+P2 = P(:,8:1);
 Y2 = sim(tinklas, P2);
 % ieğkoma, kuriame iğëjime gauta didşiausia reikğmë
 [a2, b2] = max(Y2);
@@ -26,34 +26,34 @@ atsakymas = [];
 for k = 1:raidziu_sk
     switch b2(k)
         case 1
-            atsakymas = [atsakymas, 'A'];
+            atsakymas = [atsakymas, '1'];
         case 2
-            atsakymas = [atsakymas, 'B'];
+            atsakymas = [atsakymas, '2'];
         case 3
-            atsakymas = [atsakymas, 'C'];
+            atsakymas = [atsakymas, '3'];
         case 4
-            atsakymas = [atsakymas, 'D'];
+            atsakymas = [atsakymas, '4'];
         case 5
-            atsakymas = [atsakymas, 'E'];
+            atsakymas = [atsakymas, '5'];
         case 6
-            atsakymas = [atsakymas, 'F'];
+            atsakymas = [atsakymas, '6'];
         case 7
-            atsakymas = [atsakymas, 'G'];
+            atsakymas = [atsakymas, '7'];
         case 8
-            atsakymas = [atsakymas, 'H'];
+            atsakymas = [atsakymas, '8'];
         case 9
-            atsakymas = [atsakymas, 'I'];
-        case 10
-            atsakymas = [atsakymas, 'K'];
-        case 11
-            atsakymas = [atsakymas, 'J'];
+            atsakymas = [atsakymas, '9'];
+%         case 10
+%             atsakymas = [atsakymas, 'K'];
+%         case 11
+%             atsakymas = [atsakymas, 'J'];
     end
 end
 % pateikime rezultatà komandiniame lange
 % disp(atsakymas)
 % % figure(7), text(0.1,0.5,atsakymas,'FontSize',38)
 %% şodşio "KADA" poşymiø iğskyrimas 
-pavadinimas = 'test_kada.png';
+pavadinimas = 'duomenys2.jpg';
 pozymiai_patikrai = pozymiai_raidems_atpazinti(pavadinimas, 1);
 
 %% Raidşiø atpaşinimas
@@ -65,40 +65,40 @@ Y2 = sim(tinklas, P2);
 [a2, b2] = max(Y2);
 %% Rezultato atvaizdavimas
 % apskaièiuosime raidşiø skaièiø - poşymiø P2 stulpeliø skaièiø
-raidziu_sk = size(P2,2);
+raidziu_sk = size(P2,1);
 % rezultatà saugosime kintamajame 'atsakymas'
 atsakymas = [];
 for k = 1:raidziu_sk
     switch b2(k)
         case 1
-            atsakymas = [atsakymas, 'A'];
+            atsakymas = [atsakymas, '1'];
         case 2
-            atsakymas = [atsakymas, 'B'];
+            atsakymas = [atsakymas, '2'];
         case 3
-            atsakymas = [atsakymas, 'C'];
+            atsakymas = [atsakymas, '3'];
         case 4
-            atsakymas = [atsakymas, 'D'];
+            atsakymas = [atsakymas, '4'];
         case 5
-            atsakymas = [atsakymas, 'E'];
+            atsakymas = [atsakymas, '5'];
         case 6
-            atsakymas = [atsakymas, 'F'];
+            atsakymas = [atsakymas, '6'];
         case 7
-            atsakymas = [atsakymas, 'G'];
+            atsakymas = [atsakymas, '7'];
         case 8
-            atsakymas = [atsakymas, 'H'];
+            atsakymas = [atsakymas, '8'];
         case 9
-            atsakymas = [atsakymas, 'I'];
-        case 10
-            atsakymas = [atsakymas, 'K'];
-        case 11
-            atsakymas = [atsakymas, 'J'];
+            atsakymas = [atsakymas, '9'];
+%         case 10
+%             atsakymas = [atsakymas, 'K'];
+%         case 11
+%             atsakymas = [atsakymas, 'J'];
     end
 end
 % pateikime rezultatà komandiniame lange
 % disp(atsakymas)
 figure(8), text(0.1,0.5,atsakymas,'FontSize',38), axis off
 %% şodşio "FIKCIJA" poşymiø iğskyrimas 
-pavadinimas = 'test_fikcija.png';
+pavadinimas = 'duomenys2.jpg';
 pozymiai_patikrai = pozymiai_raidems_atpazinti(pavadinimas, 1);
 
 %% Raidşiø atpaşinimas
@@ -116,27 +116,27 @@ atsakymas = [];
 for k = 1:raidziu_sk
     switch b2(k)
         case 1
-            atsakymas = [atsakymas, 'A'];
+            atsakymas = [atsakymas, '1'];
         case 2
-            atsakymas = [atsakymas, 'B'];
+            atsakymas = [atsakymas, '2'];
         case 3
-            atsakymas = [atsakymas, 'C'];
+            atsakymas = [atsakymas, '3'];
         case 4
-            atsakymas = [atsakymas, 'D'];
+            atsakymas = [atsakymas, '4'];
         case 5
-            atsakymas = [atsakymas, 'E'];
+            atsakymas = [atsakymas, '5'];
         case 6
-            atsakymas = [atsakymas, 'F'];
+            atsakymas = [atsakymas, '6'];
         case 7
-            atsakymas = [atsakymas, 'G'];
+            atsakymas = [atsakymas, '7'];
         case 8
-            atsakymas = [atsakymas, 'H'];
+            atsakymas = [atsakymas, '8'];
         case 9
-            atsakymas = [atsakymas, 'I'];
-        case 10
-            atsakymas = [atsakymas, 'K'];
-        case 11
-            atsakymas = [atsakymas, 'J'];
+            atsakymas = [atsakymas, '9'];
+%         case 10
+%             atsakymas = [atsakymas, 'K'];
+%         case 11
+%             atsakymas = [atsakymas, 'J'];
     end
 end
 % pateikime rezultatà komandiniame lange

@@ -8,13 +8,13 @@ pozymiai_tinklo_mokymui = pozymiai_raidems_atpazinti(pavadinimas, 4);
 % poşymiai iğ celiø masyvo perkeliami á matricà
 P = cell2mat(pozymiai_tinklo_mokymui);
 % sukuriama teisingø atsakymø matrica: 11 raidşiø, 8 eilutës mokymui
-T = [eye(7), eye(7), eye(7), eye(7), eye(7)];
+T = [eye(5), eye(5), eye(5), eye(5)];
 % sukuriamas SBF tinklas duotiems P ir T sàryğiams
 tinklas = newrb(P,T,0,1,13);
 
 %% Tinklo patikra
 % skaièiuojamas tinklo iğëjimas neşinomiems poşymiams
-P2 = P(:,1:6);
+P2 = P(:,1:5);
 Y2 = sim(tinklas, P2);
 % ieğkoma, kuriame iğëjime gauta didşiausia reikğmë
 [a2, b2] = max(Y2);
@@ -35,10 +35,10 @@ for k = 1:raidziu_sk
             atsakymas = [atsakymas, '4'];
         case 5
             atsakymas = [atsakymas, '5'];
-        case 6
-            atsakymas = [atsakymas, '6'];
-        case 7
-            atsakymas = [atsakymas, '7'];
+%         case 6
+%             atsakymas = [atsakymas, 'F'];
+%         case 7
+%             atsakymas = [atsakymas, 'G'];
 %         case 8
 %             atsakymas = [atsakymas, 'H'];
 %         case 9
@@ -53,7 +53,7 @@ end
 % disp(atsakymas)
 % % figure(7), text(0.1,0.5,atsakymas,'FontSize',38)
 %% şodşio "KADA" poşymiø iğskyrimas 
-pavadinimas = 'patikrai.jpg';
+pavadinimas = 'mokymui.jpg';
 pozymiai_patikrai = pozymiai_raidems_atpazinti(pavadinimas, 1);
 
 %% Raidşiø atpaşinimas
@@ -80,10 +80,10 @@ for k = 1:raidziu_sk
             atsakymas = [atsakymas, '4'];
         case 5
             atsakymas = [atsakymas, '5'];
-        case 6
-            atsakymas = [atsakymas, '6'];
-        case 7
-            atsakymas = [atsakymas, '7'];
+%         case 6
+%             atsakymas = [atsakymas, 'F'];
+%         case 7
+%             atsakymas = [atsakymas, 'G'];
 %         case 8
 %             atsakymas = [atsakymas, 'H'];
 %         case 9
@@ -99,7 +99,7 @@ end
 % disp(atsakymas)
 figure(8), text(0.1,0.5,atsakymas,'FontSize',38), axis off
 %% şodşio "FIKCIJA" poşymiø iğskyrimas 
-pavadinimas = 'patikrai.jpg';
+pavadinimas = 'bandymas.jpg';
 pozymiai_patikrai = pozymiai_raidems_atpazinti(pavadinimas, 1);
 
 %% Raidşiø atpaşinimas
@@ -126,10 +126,10 @@ for k = 1:raidziu_sk
             atsakymas = [atsakymas, '4'];
         case 5
             atsakymas = [atsakymas, '5'];
-        case 6
-            atsakymas = [atsakymas, '6'];
-        case 7
-            atsakymas = [atsakymas, '7'];
+%         case 6
+%             atsakymas = [atsakymas, 'F'];
+%         case 7
+%             atsakymas = [atsakymas, 'G'];
 %         case 8
 %             atsakymas = [atsakymas, 'H'];
 %         case 9
